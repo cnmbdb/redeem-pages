@@ -1,0 +1,14 @@
+{
+  "name": "Redemption Pages",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [
+    8000
+  ],
+  "portsAttributes": {
+    "8000": {
+      "label": "Page preview",
+      "onAutoForward": "notify"
+    }
+  },
+  "postStartCommand": "python3 -m http.server 8000 --bind 0.0.0.0 > /tmp/redeem-pages-preview.log 2>&1 &"
+}
